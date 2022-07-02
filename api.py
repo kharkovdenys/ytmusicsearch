@@ -19,8 +19,10 @@ def search_music():
         json = request.get_json()
         response = yt_music.search(json["query"], filter='songs')
         for element in response:
-            del element["category"], element["duration_seconds"], element["feedbackTokens"]
-            del element["isExplicit"], element["year"], element["resultType"]
+            element["thumbnail"] = element["thumbnails"]
+            element["length"] = element["duration"]
+            del element["category"], element["duration_seconds"], element["feedbackTokens"], element["thumbnails"]
+            del element["isExplicit"], element["year"], element["resultType"], element["duration"]
         return jsonify(response), 201
     return {"error": "Request must be JSON"}, 415
 
