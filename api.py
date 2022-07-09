@@ -122,5 +122,9 @@ def get_otheruser_playlist():
 def get_music_from_playlist():
     if request.is_json:
         json = request.get_json()
-        return jsonify(yt_music.get_playlist(json["id"])), 201
+        playlist = yt_music.get_playlist(json["id"])
+        for element in playlist["tracks"]:
+            element["thumbnail"] = element["thumbnails"]
+            del element["thumbnails"]
+        return jsonify(playlist), 201
     return {"error": "Request must be JSON"}, 415
