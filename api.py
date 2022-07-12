@@ -125,6 +125,7 @@ def get_music_from_playlist():
         playlist = yt_music.get_playlist(json["id"])
         for element in playlist["tracks"]:
             element["thumbnail"] = element["thumbnails"]
-            del element["thumbnails"]
+            element["length"] = element["duration"]
+            del element["thumbnails"], element["duration"]
         return jsonify(playlist), 201
     return {"error": "Request must be JSON"}, 415
