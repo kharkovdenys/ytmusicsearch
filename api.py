@@ -82,7 +82,7 @@ def remove_music_from_playlist():
         json = request.get_json()
         if yt_music.get_playlist(json["id"], 0)["description"] != read(token):
             return {"error": "Not your playlist"}, 415
-        yt_music.remove_playlist_items(json["id"], [json["videoid"]])
+        yt_music.remove_playlist_items(json["id"], [{"videoId": json["videoid"], "setVideoId": json["setVideoId"]}])
         return jsonify({'success': True}), 201
     return {"error": "Request must be JSON"}, 415
 
