@@ -87,6 +87,17 @@ def remove_music_from_playlist():
     return {"error": "Request must be JSON"}, 415
 
 
+@myapi.post('/playlist/check')
+def check():
+    if request.is_json:
+        token = request.headers.get('authorization')
+        json = request.get_json()
+        if yt_music.get_playlist(json["id"], 0)["description"] != read(token):
+            return "false", 200
+        return "true", 200
+    return {"error": "Request must be JSON"}, 415
+
+
 @myapi.get('/getmyplaylist')
 def get_my_playlist():
     token = request.headers.get('authorization')
