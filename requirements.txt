@@ -1,0 +1,4 @@
+Flask
+ytmusicapi
+flask_cors
+pyjwt
