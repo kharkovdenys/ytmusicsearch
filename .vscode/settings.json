@@ -29,7 +29,8 @@
         "env.bak{,/**}",
         "venv.bak{,/**}",
         ".vscode{,/**}",
-        "LICENSE"
+        "LICENSE",
+        "README.md"
     ],
     "appService.defaultWebAppToDeploy": "None",
 }
