@@ -17,7 +17,7 @@ Search musics, get music mix and manage playlists
 
 ## Common setup
 
-Clone the repo and install the dependencies.
+Clone the repo and install the dependencies
 
 ```bash
 git clone https://github.com/kharkovdenys/ytmusicsearch.git
@@ -50,7 +50,7 @@ Create ***headers_auth.json*** use this [manual](https://ytmusicapi.readthedocs.
 
 Select Run and Debug on the Debug start view or press F5
 
-Open [http://127.0.0.1:5000](http://127.0.0.1:5000) and take a look around.
+Open [http://127.0.0.1:5000](http://127.0.0.1:5000) and take a look around
 
 ## Deploy project to App Service
 
