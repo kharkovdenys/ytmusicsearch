@@ -1,6 +1,6 @@
 ## YT Music Search
 
-Search musics, get music mix and manage playlists 
+Search for music, get similar music and manage playlists
 
 ## Requirements
 
@@ -42,9 +42,9 @@ pip3 install -r requirements.txt
 
 ## Configure authentication
 
-Create ***headers_auth.json*** use this [manual](https://ytmusicapi.readthedocs.io/en/latest/setup.html)
+Create ***browser.json*** use this [manual](https://ytmusicapi.readthedocs.io/en/latest/setup/browser.html#manual-file-creation)
 
-## Steps for read-only access
+## Start the application
 
 **VS Code**
 
