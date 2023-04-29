@@ -129,7 +129,7 @@ def get_user_playlists():
         user_playlists = []
         for playlist in playlists:
             find = playlist["title"].find(":")
-            if playlist["title"][int(playlist["title"][0:find]) + find + 1:] == username:
+            if find > 0 and playlist["title"][int(playlist["title"][0:find]) + find + 1:] == username:
                 user_playlists.append(Playlist(playlist).to_dict())
         return jsonify(user_playlists), 200
     except Exception as e:
